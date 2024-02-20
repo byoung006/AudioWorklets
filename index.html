@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioWorklets</title>
+</head>
+<body>
+    <h1>AudioWorklets</h1>
+    <input type="range" id="gain" min="0" max="100" step="0.01" value="0">
+    <button id="start-button" >Start measurment</button>
+    <script src="main.js" type="module">
+        import {AudioProcessorMain} from './main.js'
+        let audioProcessClass = new AudioProcessorMain()
+        console.log('audioProcessClass', audioProcessClass)
+        // when the user clicks the button above, I want to access the onLoad function from the audioProcessClass class
+        document.getElementById('button-start').addEventListener('click', audioProcessClass.onLoad)
+
+    </script>
+       
+</body>
+</html>
